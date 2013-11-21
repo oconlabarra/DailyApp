@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 //Test from Jemmy
+//Test from Alexey
+
 public class HomeActivity extends Activity {
 
 	
