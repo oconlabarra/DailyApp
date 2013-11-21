@@ -1,14 +1,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
-  <!-- Scan, should appear as action button -->
+  <!-- Scan, should appear as action button 
     <item android:id="@+id/action_scan"
           android:icon="@drawable/ic_scan"
           android:title="@string/scan"
           android:showAsAction="ifRoom" /> 
+  -->
+  
     <!-- Settings, should always be in the overflow -->
-    <item android:id="@+id/action_settings"
-          android:title="@string/action_settings"
-          android:showAsAction="never" />
+    <item android:id="@+id/action_pref"
+          android:title="@string/action_pref"
+          android:showAsAction="ifRoom" />
 
 
 </menu>
