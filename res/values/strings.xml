@@ -8,6 +8,8 @@
     <string name="title_activity_product">ProductActivity</string>
     <string name="title_activity_select_product">SelectProductActivity</string>
     <string name="DailyApp">Daily App</string>
+    <string name="scan">Scan Product</string>
+    <string name="cart">Show Cart</string>
 
 
 </resources>
