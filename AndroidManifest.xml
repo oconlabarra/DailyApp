@@ -31,7 +31,7 @@
             android:label="@string/title_activity_product" >
         </activity>
         <activity
-            android:name="com.inghackathon.dailyapp.SelectProductActivity"
+            android:name="com.inghackathon.dailyapp.ui.SelectProductActivity"
             android:label="@string/title_activity_select_product" >
         </activity>
     </application>

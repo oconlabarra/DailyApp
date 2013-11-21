@@ -1,4 +1,8 @@
-package com.inghackathon.dailyapp;
+package com.inghackathon.dailyapp.ui;
+
+import com.inghackathon.dailyapp.R;
+import com.inghackathon.dailyapp.R.layout;
+import com.inghackathon.dailyapp.R.menu;
 
 import android.os.Bundle;
 import android.app.Activity;
