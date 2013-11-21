@@ -3,7 +3,7 @@ package com.inghackathon.dailyapp;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
-
+//Test from Jemmy
 public class HomeActivity extends Activity {
 
 	@Override
