@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.view.Menu;
 //Test from Jemmy
 // test from Fry
+//Test from Alexey
+
 public class HomeActivity extends Activity {
 
 	@Override
