@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import com.inghackathon.dailyapp.ui.*;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -28,6 +30,43 @@ public class HomeActivity extends Activity {
 	    return super.onCreateOptionsMenu(menu);
 	}
 	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle presses on the action bar items
+	    switch (item.getItemId()) {
+	        case R.id.action_pref:
+	            this.goToPref();
+	            return true;
+	        case R.id.action_settings:
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
+	
+	private void goToPref(){
+//		if(selectedView == null){
+//			Toast.makeText(getApplicationContext(), "Please select your preference", 
+//					   Toast.LENGTH_SHORT).show();
+//		}else{
+//			Intent intent = new Intent(this, HomeActivity.class);
+//			int selectedId = selectedView.getId();
+//			int selectedPref = -1;
+//			for(int i = 0; i < prefIconIds.length; i++){
+//				if(prefIconIds[i].equals(selectedId)){
+//					selectedPref = i;
+//				}
+//			}
+//			
+//			if(selectedPref > -1){
+//				intent.putExtra(SELECTED_PREF, ""+ selectedPref);
+//			}
+//			startActivity(intent);
+//
+//		}
+		Intent intent = new Intent(this, PreferenceActivity.class);
+		startActivity(intent);
+	}
 	public void onClickScanBtn(View v){
 		//this.toast("Scan Button clicked");
 		IntentIntegrator scanIntegrator = new IntentIntegrator(this);
