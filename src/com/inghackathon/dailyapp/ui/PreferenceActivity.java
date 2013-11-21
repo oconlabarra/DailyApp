@@ -1,7 +1,9 @@
 package com.inghackathon.dailyapp.ui;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,7 +14,8 @@ import android.widget.Toast;
 import com.inghackathon.dailyapp.R;
 
 public class PreferenceActivity extends Activity {
-
+	private ListView listview;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -20,10 +23,13 @@ public class PreferenceActivity extends Activity {
 		
 	    setContentView(R.layout.activity_preference);
 
-	    final ListView listview = (ListView) findViewById(R.id.listview);	    
+	    listview = (ListView) findViewById(R.id.listview);	    
 	    final ListViewArrayAdapter adapter = new ListViewArrayAdapter(this);
+	    
 	    listview.setAdapter(adapter);
-
+	    listview.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+	    //TODO: Initiate the existing preference
+	    //listview.setItemChecked(position, value)
 	    
 	    listview.setOnItemClickListener(new OnItemClickListener() {
 	    	  public void onItemClick(AdapterView<?> parent, View view,
@@ -32,9 +38,7 @@ public class PreferenceActivity extends Activity {
 	    	      "Click ListItem Number " + position, Toast.LENGTH_SHORT)
 	    	      .show();
 	    	    
-////	    	    final String item = (String) parent.getItemAtPosition(position);
-////	            list.remove(item);
-////	            adapter.notifyDataSetChanged();
+	    	    adapter.notifyDataSetChanged();
 	    	  }
 	    	}); 
 	}
@@ -45,6 +49,36 @@ public class PreferenceActivity extends Activity {
 		getMenuInflater().inflate(R.menu.home, menu);
 		return true;
 	}
+	
+	public void onClickPrefDone(View v){
+		SparseBooleanArray spa = listview.getCheckedItemPositions();
+		int[] selectedIndex = extractSelectedIndex(spa);
+		setPref(selectedIndex);
+	}
+	
+	private void setPref(int[] selectedIndex) {
+		String s = "";
+		for (int i = 0; i < selectedIndex.length; i++) {
+			s += selectedIndex[i] + ", ";
+		}
+		//TODO:###
+		toast("Todo: set preference object" + s);	
+	}
+	
+	private int[] extractSelectedIndex(SparseBooleanArray spa){
+		int size = spa.size();
+		int[] selectedIndex = new int[size];
+		for(int i = 0; i < size; i++){
+			selectedIndex[i] = spa.keyAt(i);
+		}
+		return selectedIndex;
+	}
+	
+	public void toast(String s){
+		Context context = getApplicationContext();
+		int duration = Toast.LENGTH_SHORT;
 
-
+		Toast.makeText(context, s, duration).show();
+	}
+	
 }
