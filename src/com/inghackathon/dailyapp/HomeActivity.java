@@ -57,12 +57,8 @@ public class HomeActivity extends Activity {
             if (scanningResult != null) {
                     //we have a result, retrieve content of the scan
                     String scanContent = scanningResult.getContents();
-                    // retrieve format name
-                    //String scanFormat = scanningResult.getFormatName();
                     
-                    // write retrieved value on the text views
-                    //formatTxt.setText("FORMAT: " + scanFormat);
-                    //contentTxt.setText("CONTENT: " + scanContent);
+                    // write retrieved value on the toast
                     this.toast("Scan result: " + scanContent);
                     
             } else {
