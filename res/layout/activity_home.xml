@@ -7,10 +7,77 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".HomeActivity" >
+    
+<!-- Daily App Logo-->
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_dailyapp_logo" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/editText1"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_below="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:text="@string/DailyApp" 
+        android:textStyle="bold" />
+
+ <!-- Scan button -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignLeft="@+id/imageView5"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="14dp"
+        android:background="@drawable/border"
+        android:src="@drawable/ic_scan" 
+        android:onClick="onClickScanBtn"/>   
+
+  <!-- Cart button -->  
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_cart" 
+        android:background="@drawable/border"
+        android:onClick="onClickCartBtn"/> 
+<!-- Peer Advice Mockup-->
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="58dp"
+        android:src="@drawable/ic_peer_advice"
+         />
+<!-- Go Left button -->
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="40dp"
+        android:layout_height="27dp"
+        android:layout_alignBottom="@+id/imageView4"
+        android:layout_marginBottom="17dp"
+        android:layout_toLeftOf="@+id/imageView4"
+        android:src="@drawable/ic_go_left" />
+<!-- Go Right button -->
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="40dp"
+        android:layout_height="27dp"
+        android:layout_alignTop="@+id/imageView5"
+        android:layout_toRightOf="@+id/imageView4"
+        android:src="@drawable/ic_go_right" />
+
 
 </RelativeLayout>

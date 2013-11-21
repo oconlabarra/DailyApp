@@ -7,5 +7,7 @@
     <string name="title_activity_cart">CartActivity</string>
     <string name="title_activity_product">ProductActivity</string>
     <string name="title_activity_select_product">SelectProductActivity</string>
+    <string name="DailyApp">Daily App</string>
+
 
 </resources>
