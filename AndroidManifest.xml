@@ -22,6 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.inghackathon.dailyapp.ui.CartActivity"
+            android:label="@string/title_activity_cart" >
+        </activity>
+        <activity
+            android:name="com.inghackathon.dailyapp.ui.ProductActivity"
+            android:label="@string/title_activity_product" >
+        </activity>
+        <activity
+            android:name="com.inghackathon.dailyapp.SelectProductActivity"
+            android:label="@string/title_activity_select_product" >
+        </activity>
     </application>
 
 </manifest>
