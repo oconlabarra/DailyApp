@@ -6,11 +6,27 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/white"
     tools:context=".CartTabActivity" >
 
-    <TextView
+    <ListView
+	    android:id="@+id/cartview"
+	    android:layout_width="wrap_content"
+	    android:layout_height="match_parent"
+        android:layout_marginBottom="15dp"
+	    android:layout_above="@+id/checkout_btn" />
+    
+ 
+
+    <ImageView
+        android:id="@+id/checkout_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_checkout"
+        android:onClick="onClickCheckout" />
+    
 
 </RelativeLayout>

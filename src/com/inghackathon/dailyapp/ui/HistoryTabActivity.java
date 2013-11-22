@@ -9,21 +9,23 @@ import android.support.v4.app.NavUtils;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class HistoryTabActivity extends Activity {
-
+	private ListView listview;
 	@Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-       
-        TextView  tv=new TextView(this);
-        tv.setTextSize(25);
-        tv.setGravity(Gravity.CENTER_VERTICAL);
-        tv.setText("This Is Tab3 Activity");
-       
-        setContentView(tv);
+        setContentView(R.layout.activity_history_tab);
+        
+        listview = (ListView) findViewById(R.id.historyview);	    
+	    HistoryArrayAdapter adapter = new HistoryArrayAdapter(this);
+	    
+	    listview.setAdapter(adapter);
+	    
+	 
     }
 
 
