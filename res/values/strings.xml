@@ -12,7 +12,7 @@
     <string name="scan">Scan Product</string>
     <string name="cart">Show Cart</string>
     <string name="select_pref">Select your preference: </string>
-    <string name="title_activity_preference">PreferenceActivity</string>
+    <string name="title_activity_preference">Diet Preference</string>
     <string name="action_pref">Diet Preference</string>
     <string name="title_activity_cart_tab">View Your Cart</string>
     <string name="title_activity_history_tab">View Purchase History</string>
