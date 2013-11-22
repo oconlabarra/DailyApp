@@ -45,32 +45,15 @@ public class HomeActivity extends Activity {
 	}
 	
 	private void goToPref(){
-//		if(selectedView == null){
-//			Toast.makeText(getApplicationContext(), "Please select your preference", 
-//					   Toast.LENGTH_SHORT).show();
-//		}else{
-//			Intent intent = new Intent(this, HomeActivity.class);
-//			int selectedId = selectedView.getId();
-//			int selectedPref = -1;
-//			for(int i = 0; i < prefIconIds.length; i++){
-//				if(prefIconIds[i].equals(selectedId)){
-//					selectedPref = i;
-//				}
-//			}
-//			
-//			if(selectedPref > -1){
-//				intent.putExtra(SELECTED_PREF, ""+ selectedPref);
-//			}
-//			startActivity(intent);
-//
-//		}
 		Intent intent = new Intent(this, PreferenceActivity.class);
 		startActivity(intent);
 	}
 	public void onClickScanBtn(View v){
 		//this.toast("Scan Button clicked");
-		IntentIntegrator scanIntegrator = new IntentIntegrator(this);
-        scanIntegrator.initiateScan();
+//		IntentIntegrator scanIntegrator = new IntentIntegrator(this);
+//        scanIntegrator.initiateScan();
+		Intent intent = new Intent(this, ProductActivity.class);
+		startActivity(intent);
 	}
 	
 	public void onClickCartBtn(View v){

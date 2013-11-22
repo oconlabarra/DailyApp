@@ -102,20 +102,20 @@
     <TextView
         android:id="@+id/textPrice"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="70dp"
         android:layout_alignLeft="@+id/imageCriteria"
         android:layout_alignTop="@+id/imageAddCart"
         android:background="@drawable/border"
         android:text="@string/product_price"
-        android:textSize="30sp" />
+        android:textSize="25sp" />
 
     <ImageView
         android:id="@+id/imageAddCart"
-        android:layout_width="120dp"
-        android:layout_height="60dp"
+        android:layout_width="168dp"
+        android:layout_height="84dp"
         android:layout_alignRight="@+id/imageCriteria"
         android:layout_below="@+id/imageCriteria"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:onClick="onClickAddToCart"
         android:src="@drawable/ic_addcart" />
     
