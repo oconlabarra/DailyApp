@@ -21,6 +21,7 @@ import com.inghackathon.dailyapp.ui.ProductActivity;
 public class HomeActivity extends Activity {
 	public static final String PRODUCT_BARCODE = "PRODUCT_BARCODE";
 	public User user;
+	private String scanContent = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +62,16 @@ public class HomeActivity extends Activity {
 	}
 	public void onClickScanBtn(View v){
 		//this.toast("Scan Button clicked");
-//		IntentIntegrator scanIntegrator = new IntentIntegrator(this);
-//        scanIntegrator.initiateScan();
-		
-		String barcodeNo = "4890008100309";
-		Intent intent = new Intent(this, ProductActivity.class);
-		intent.putExtra(PRODUCT_BARCODE, barcodeNo);
-		startActivity(intent);
+		IntentIntegrator scanIntegrator = new IntentIntegrator(this);
+        scanIntegrator.initiateScan();
+        //this.toast("Scan result: " + scanContent);
+        
+        //NOW!
+		//String barcodeNo = "4890008100309";
+		//Intent intent = new Intent(this, ProductActivity.class);
+		//intent.putExtra(PRODUCT_BARCODE, barcodeNo);
+		//intent.putExtra(PRODUCT_BARCODE, scanContent);
+		//startActivity(intent);
 	}
 	
 	public void onClickCartBtn(View v){
@@ -92,10 +96,14 @@ public class HomeActivity extends Activity {
             
             if (scanningResult != null) {
                     //we have a result, retrieve content of the scan
-                    String scanContent = scanningResult.getContents();
+                    scanContent = scanningResult.getContents();
                     
                     // write retrieved value on the toast
-                    this.toast("Scan result: " + scanContent);
+                    //this.toast("Scan result: " + scanContent);
+                    intent = new Intent(this, ProductActivity.class);
+            		//intent.putExtra(PRODUCT_BARCODE, barcodeNo);
+            		intent.putExtra(PRODUCT_BARCODE, scanContent);
+            		startActivity(intent);
                     
             } else {
                     // scan data is not received (for example, if the user cancels the scan by pressing the back button)

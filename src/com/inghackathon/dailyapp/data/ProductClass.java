@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class ProductClass {
 
 	public String Name;
+	public String Description;
 	public ArrayList<CriteriaClass> ProductCriteria;
 	public String BarCode;
 	public double Price;
@@ -44,6 +45,7 @@ public class ProductClass {
 		this.BarCodeOfProductRelated3=library.GetRelatedProduct3BarCodeByBarCode(BarCode);
 		this.productImageResourceId = library.GetProductImageResourceIdByBarCode(BarCode);
 		this.detailImageResourceId = library.GetDetailImageResourceIdByBarCode(BarCode);
+		this.Description = library.GetProductDescriptionByBarCode(BarCode);
 	}
 	
 	

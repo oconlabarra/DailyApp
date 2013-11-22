@@ -71,7 +71,7 @@
         android:layout_below="@+id/imageProduct"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:src="@drawable/ic_colacan" 
+        android:src="@drawable/ic_colabottle" 
         android:background="@drawable/border"
         android:onClick="onClickCartBtn"/>
     

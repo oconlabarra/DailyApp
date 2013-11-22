@@ -11,12 +11,15 @@ public class PreferenceClass {
 
 		public String Description;
 		
+		public int imageResourceId;
+		
 		public PreferenceClass()
 		{
 			IsChosen = false;
 			Description = new String();
 			Description="";
 			Title = PreferencesEnum.AllergicPerson;
+			imageResourceId = -1;
 		}
 
 }

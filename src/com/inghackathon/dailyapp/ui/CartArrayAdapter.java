@@ -11,9 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.inghackathon.dailyapp.R;
+import com.inghackathon.dailyapp.data.User;
 
 public class CartArrayAdapter extends ArrayAdapter<String> {
 	private final Context context;
+	
+	public User user = User.getInstance();
+	
 	private static final String[] prefText = {
 			"Pregnant Woman", 
 			"Heart Disease Patient"
@@ -29,8 +33,13 @@ public class CartArrayAdapter extends ArrayAdapter<String> {
     };
 
 	  public CartArrayAdapter(Context context) {
-	    super(context, R.layout.listitem, prefText);
+		  
+		
+	    super(context, R.layout.listitem, User.getInstance().shoppingCart.getProductsNamesFromShoppingCart());
+	    	//User.getInstance().shoppingCart.getProductsNamesFromShoppingCart());
 	    this.context = context;
+	    
+	    //user = User.getInstance();
 	  }
 	
 	
@@ -44,11 +53,15 @@ public class CartArrayAdapter extends ArrayAdapter<String> {
 		    TextView text = (TextView) rowView.findViewById(R.id.firstLine);
 		    TextView textDesc = (TextView) rowView.findViewById(R.id.secondLine);
 		    ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
-		    text.setText(prefText[position]);
-		    textDesc.setText(prefDesc[position]);
-		    imageView.setImageResource(prefIconIds[position]);
+		    //text.setText(prefText[position]);
+		    //textDesc.setText(prefDesc[position]);
+		    //imageView.setImageResource(prefIconIds[position]);
 		    
-	
+
+		    text.setText(User.getInstance().shoppingCart.getProductsNamesFromShoppingCart().get(position));
+		    textDesc.setText(User.getInstance().shoppingCart.getProductsDescriptionsFromShoppingCart().get(position));
+		    imageView.setImageResource(User.getInstance().shoppingCart.getProductsImageIdsFromShoppingCart().get(position));
+
 		    return rowView;
 	  }
 }
