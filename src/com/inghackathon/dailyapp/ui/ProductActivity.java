@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.inghackathon.dailyapp.HomeActivity;
@@ -21,10 +22,15 @@ public class ProductActivity extends Activity {
 		Intent intent = getIntent();
 		String barcodeNo = intent.getStringExtra(HomeActivity.PRODUCT_BARCODE);
 		productClass = new ProductClass(barcodeNo);
-		toast(barcodeNo);
 		
-//		pc.Name;
-//		pc.Price;
+		TextView textName = (TextView) findViewById(R.id.textProductName);
+		textName.setText(productClass.Name);
+		
+		TextView textPrice = (TextView) findViewById(R.id.textPrice);
+		String euroSign = "\u20ac";
+		textPrice.setText(euroSign + " " + productClass.Price);
+		
+		
 //		pc.BarCodeOfProductRelated1;
 //		pc.BarCodeOfProductRelated2;
 //		pc.BarCodeOfProductRelated3;
