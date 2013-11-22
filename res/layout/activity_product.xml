@@ -98,7 +98,7 @@
         />
 
 <!-- Choice3 button -->
-
+ 
     <TextView
         android:id="@+id/textPrice"
         android:layout_width="wrap_content"
