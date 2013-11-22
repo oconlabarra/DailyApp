@@ -74,8 +74,8 @@ public class HomeActivity extends Activity {
 	}
 	
 	public void onClickCartBtn(View v){
-		this.toast("Cart Button clicked");
-		
+		Intent intent = new Intent(this, CartActivity.class);
+		startActivity(intent);
 	}
 	
 	public void toast(String s){

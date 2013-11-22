@@ -1,20 +1,45 @@
 package com.inghackathon.dailyapp.ui;
 
-import com.inghackathon.dailyapp.R;
-import com.inghackathon.dailyapp.R.layout;
-import com.inghackathon.dailyapp.R.menu;
-
+import android.app.TabActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.Menu;
+import android.widget.TabHost;
+import android.widget.TabHost.TabSpec;
+import com.inghackathon.dailyapp.ui.*;
 
-public class CartActivity extends Activity {
+import com.inghackathon.dailyapp.R;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_cart);
-	}
+public class CartActivity extends TabActivity {
+
+	/** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_cart);
+            
+            // create the TabHost that will contain the Tabs
+            TabHost tabHost = (TabHost)findViewById(android.R.id.tabhost);
+
+
+            TabSpec tab1 = tabHost.newTabSpec("Cart");
+            TabSpec tab2 = tabHost.newTabSpec("History");
+
+           // Set the Tab name and Activity
+           // that will be opened when particular Tab will be selected
+            tab1.setIndicator("Cart");
+            tab1.setContent(new Intent(this,CartTabActivity.class));
+           
+            tab2.setIndicator("History");
+            tab2.setContent(new Intent(this,HistoryTabActivity.class));
+
+           
+            /** Add the tabs  to the TabHost to display. */
+            tabHost.addTab(tab1);
+            tabHost.addTab(tab2);
+
+    }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

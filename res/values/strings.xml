@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
@@ -18,3 +19,25 @@
     <string name="product_price">&#8364; 1,99</string>
 
 </resources>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DailyApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_cart">CartActivity</string>
+    <string name="title_activity_product">ProductActivity</string>
+    <string name="title_activity_select_product">SelectProductActivity</string>
+    <string name="DailyApp">Daily App</string>
+    <string name="ing_logo">ING logo of orange lion</string>
+    <string name="scan">Scan Product</string>
+    <string name="cart">Show Cart</string>
+    <string name="select_pref">Select your preference: </string>
+    <string name="title_activity_preference">PreferenceActivity</string>
+    <string name="action_pref">Diet Preference</string>
+    <string name="title_activity_cart_tab">CartTabActivity</string>
+    <string name="title_activity_history_tab">HistoryTabActivity</string>
+
+</resources>
+>>>>>>> de704b406c88b26b85ecdb18dc8c3513d7196960
