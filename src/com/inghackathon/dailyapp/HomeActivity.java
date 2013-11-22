@@ -4,9 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.inghackathon.dailyapp.data.User;
-import com.inghackathon.dailyapp.ui.*;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,8 +12,14 @@ import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.inghackathon.dailyapp.data.ProductClass;
+import com.inghackathon.dailyapp.data.User;
+import com.inghackathon.dailyapp.ui.CartActivity;
+import com.inghackathon.dailyapp.ui.PreferenceActivity;
+import com.inghackathon.dailyapp.ui.ProductActivity;
 
 public class HomeActivity extends Activity {
+	public static final String PRODUCT_BARCODE = "PRODUCT_BARCODE";
 	public User user;
 	
 	@Override
@@ -60,7 +63,10 @@ public class HomeActivity extends Activity {
 		//this.toast("Scan Button clicked");
 //		IntentIntegrator scanIntegrator = new IntentIntegrator(this);
 //        scanIntegrator.initiateScan();
+		
+		String barcodeNo = "4890008100309";
 		Intent intent = new Intent(this, ProductActivity.class);
+		intent.putExtra(PRODUCT_BARCODE, barcodeNo);
 		startActivity(intent);
 	}
 	
