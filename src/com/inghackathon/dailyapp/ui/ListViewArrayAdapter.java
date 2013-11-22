@@ -16,9 +16,9 @@ import android.widget.TextView;
 
 public class ListViewArrayAdapter extends ArrayAdapter<String> {
 	private final Context context;
-	private static final String[] prefText = {
+	public static final String[] prefText = {
 			"Pregnant Woman", 
-			"Healthy Patient",
+			"Heart Disease Patient",
 			"Sportsman",
 			"Teen",
 			"Allergic person",
@@ -26,7 +26,7 @@ public class ListViewArrayAdapter extends ArrayAdapter<String> {
 			"Dieting person",
 			"Tourist", 
 	};
-	private static final String[] prefDesc = {
+	public static final String[] prefDesc = {
 			"Nutrient for pregnant women", 
 			"Follow cardiologist recommendations",
 			"Get high performance nutrition",
@@ -37,7 +37,7 @@ public class ListViewArrayAdapter extends ArrayAdapter<String> {
 			"Keep you safe from exotic food"
 			
 	};
-	private static final Integer[] prefIconIds = {
+	public static final Integer[] prefIconIds = {
 			R.drawable.ic_pref_pregnant,
 			R.drawable.ic_pref_heart,
 			R.drawable.ic_pref_sport,

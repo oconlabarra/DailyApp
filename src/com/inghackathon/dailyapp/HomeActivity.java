@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.inghackathon.dailyapp.data.User;
 import com.inghackathon.dailyapp.ui.*;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,13 +17,19 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 public class HomeActivity extends Activity {
-
+	public User user;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		user = User.getInstance();
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
 	}
-
+	
+	public User getUser(){
+		return user;
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

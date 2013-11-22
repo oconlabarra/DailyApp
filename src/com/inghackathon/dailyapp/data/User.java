@@ -7,17 +7,19 @@ import java.lang.Object;
 
 
 public class User {
-
+	private static User instance = new User();
 	public ArrayList<PreferenceClass> UserPreferences = new ArrayList();
 	
 	PreferenceClass UserPreference = new PreferenceClass();
 	
-	public User() {
-	
+	private User() {
 		this.SetInitialPreferences();
 		
 	}
 	
+	public static User getInstance(){
+		return instance;
+	}
 	
 	public void SetPreference(PreferencesEnum pref, boolean isChosen)
 	{

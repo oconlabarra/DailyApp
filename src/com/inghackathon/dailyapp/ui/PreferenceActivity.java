@@ -1,7 +1,11 @@
 package com.inghackathon.dailyapp.ui;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
 import android.view.Menu;
@@ -11,7 +15,11 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.inghackathon.dailyapp.HomeActivity;
 import com.inghackathon.dailyapp.R;
+import com.inghackathon.dailyapp.data.PreferenceClass;
+import com.inghackathon.dailyapp.data.PreferencesEnum;
+import com.inghackathon.dailyapp.data.User;
 
 public class PreferenceActivity extends Activity {
 	private ListView listview;
@@ -28,17 +36,22 @@ public class PreferenceActivity extends Activity {
 	    
 	    listview.setAdapter(adapter);
 	    listview.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+	    
 	    //TODO: Initiate the existing preference
-	    //listview.setItemChecked(position, value)
+	    User u = User.getInstance();
+	    for (PreferenceClass pref : u.UserPreferences) {
+	    	int position = pref.Title.ordinal();
+		    listview.setItemChecked(position, pref.IsChosen);
+		}
 	    
 	    listview.setOnItemClickListener(new OnItemClickListener() {
 	    	  public void onItemClick(AdapterView<?> parent, View view,
 	    	    int position, long id) {
 	    	    Toast.makeText(getApplicationContext(),
-	    	      "Click ListItem Number " + position, Toast.LENGTH_SHORT)
+	    	    		ListViewArrayAdapter.prefText[position] + " has been set/unset.", Toast.LENGTH_SHORT)
 	    	      .show();
 	    	    
-	    	    adapter.notifyDataSetChanged();
+//	    	    adapter.notifyDataSetChanged();
 	    	  }
 	    	}); 
 	}
@@ -54,6 +67,15 @@ public class PreferenceActivity extends Activity {
 		SparseBooleanArray spa = listview.getCheckedItemPositions();
 		int[] selectedIndex = extractSelectedIndex(spa);
 		setPref(selectedIndex);
+
+		toast("Your new preference has been set");	
+		
+		goBackHome();
+	}
+	
+	private void goBackHome(){
+		Intent intent = new Intent(this, HomeActivity.class);
+		startActivity(intent);
 	}
 	
 	private void setPref(int[] selectedIndex) {
@@ -61,17 +83,46 @@ public class PreferenceActivity extends Activity {
 		for (int i = 0; i < selectedIndex.length; i++) {
 			s += selectedIndex[i] + ", ";
 		}
-		//TODO:###
-		toast("Todo: set preference object" + s);	
+
+		User u = User.getInstance();
+		
+		for (int i = 0; i < PreferencesEnum.values().length; i++) {
+			if(this.arrayContain(selectedIndex, i)){
+				u.SetPreference(PreferencesEnum.values()[i], true);
+			}else{
+				u.SetPreference(PreferencesEnum.values()[i], false);
+			}
+		}
+		
 	}
 	
+	private boolean arrayContain(int[] array, int key){
+		for (int i = 0; i < array.length; i++) {
+			if(key == array[i]){
+				return true;
+			}
+		}
+		return false;
+	}
 	private int[] extractSelectedIndex(SparseBooleanArray spa){
 		int size = spa.size();
-		int[] selectedIndex = new int[size];
+		List<Integer> l = new ArrayList<Integer>();
 		for(int i = 0; i < size; i++){
-			selectedIndex[i] = spa.keyAt(i);
+			if(spa.valueAt(i)){
+				l.add(i);
+			}
+			
 		}
-		return selectedIndex;
+		return buildIntArray(l);
+	}
+	
+	private int[] buildIntArray(List<Integer> integers) {
+	    int[] ints = new int[integers.size()];
+	    int i = 0;
+	    for (Integer n : integers) {
+	        ints[i++] = n;
+	    }
+	    return ints;
 	}
 	
 	public void toast(String s){
