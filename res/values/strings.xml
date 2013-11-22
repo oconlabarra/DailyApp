@@ -14,5 +14,7 @@
     <string name="select_pref">Select your preference: </string>
     <string name="title_activity_preference">PreferenceActivity</string>
     <string name="action_pref">Diet Preference</string>
+    <string name="product_name">Product name</string>
+    <string name="product_price">&#8364; 1,99</string>
 
 </resources>

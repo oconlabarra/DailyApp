@@ -6,11 +6,117 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/white"
     tools:context=".ProductActivity" >
 
+<!-- Daily App Logo-->
+
     <TextView
+        android:id="@+id/textProductName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:text="@string/product_name" 
+        android:textStyle="bold" />
+    
+    <ImageView
+        android:id="@+id/imageProduct"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_below="@+id/textProductName"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_colacan" />
+    
+<!-- Go Left button -->
+    <ImageView
+        android:id="@+id/imageArrowLeft"
+        android:layout_width="40dp"
+        android:layout_height="27dp"
+        android:layout_marginBottom="50dp"
+        android:layout_alignBottom="@+id/imageProduct"
+        android:layout_toLeftOf="@+id/imageProduct"
+        android:src="@drawable/ic_go_left" />
 
+<!-- Go Right button -->
+    <ImageView
+        android:id="@+id/imageArrowRight"
+        android:layout_width="40dp"
+        android:layout_height="27dp"
+        android:layout_alignBottom="@+id/imageProduct"
+        android:layout_marginBottom="50dp"
+        android:layout_toRightOf="@+id/imageProduct"
+        android:src="@drawable/ic_go_right" />
+    
+<!-- Choice1 button -->  
+    <ImageView
+        android:id="@+id/imageChoice1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imageProduct"
+        android:layout_toLeftOf="@+id/imageChoice2"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/ic_orange" 
+        android:background="@drawable/border"
+        android:onClick="onClickCartBtn"/>
+    
+<!-- Choice2 button -->  
+    <ImageView
+        android:id="@+id/imageChoice2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imageProduct"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/ic_colacan" 
+        android:background="@drawable/border"
+        android:onClick="onClickCartBtn"/>
+    
+<!-- Choice3 button -->  
+    <ImageView
+        android:id="@+id/imageChoice3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imageProduct"
+        android:layout_toRightOf="@+id/imageChoice2"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/ic_milk" 
+        android:background="@drawable/border"
+        android:onClick="onClickCartBtn"/>
+    
+<!-- Criteria list -->
+    <ImageView 
+        android:id="@+id/imageCriteria"
+        android:src="@drawable/ic_criteria"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageChoice2"
+        />
+
+<!-- Choice3 button -->
+
+    <TextView
+        android:id="@+id/textPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/imageCriteria"
+        android:layout_alignTop="@+id/imageAddCart"
+        android:background="@drawable/border"
+        android:text="@string/product_price"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/imageAddCart"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignRight="@+id/imageCriteria"
+        android:layout_below="@+id/imageCriteria"
+        android:layout_marginTop="20dp"
+        android:onClick="onClickAddToCart"
+        android:src="@drawable/ic_addcart" />
+    
 </RelativeLayout>
