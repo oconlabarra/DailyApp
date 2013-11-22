@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
-import com.inghackathon.dailyapp.ui.*;
 
 import com.inghackathon.dailyapp.R;
 
@@ -38,6 +37,10 @@ public class CartActivity extends TabActivity {
             /** Add the tabs  to the TabHost to display. */
             tabHost.addTab(tab1);
             tabHost.addTab(tab2);
+            
+            Intent intent = getIntent();
+                        
+            tabHost.setCurrentTab(intent.getIntExtra(CartTabActivity.TAB_SELECTED, 0));
 
     }
 

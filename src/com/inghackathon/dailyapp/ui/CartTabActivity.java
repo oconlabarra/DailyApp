@@ -28,6 +28,8 @@ public class CartTabActivity extends Activity {
 	    
 	 
     }
+	
+	public static String TAB_SELECTED = "Tab_Selected";
 
 	public void onClickCheckout(View v){
 		
@@ -35,7 +37,10 @@ public class CartTabActivity extends Activity {
 		
 		user.history.SetProductsBoughtAtSpecificDate("2013/11/22", user.shoppingCart.getProductsFromShoppingCart());
 		user.shoppingCart.EmptyShoppingCart();
-		Intent intent = new Intent(this, HistoryTabActivity.class);
+		
+		Intent intent = new Intent(this, CartActivity.class);
+		intent.putExtra(TAB_SELECTED, 1);
 		startActivity(intent);
+		finish();
 	}
 }
