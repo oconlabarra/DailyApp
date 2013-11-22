@@ -12,6 +12,8 @@ public class ProductClass {
 	public String BarCodeOfProductRelated1;
 	public String BarCodeOfProductRelated2;
 	public String BarCodeOfProductRelated3;
+	public int productImageResourceId;
+	public int detailImageResourceId;
 	
 	private ProductLibrary library;
 	
@@ -25,6 +27,8 @@ public class ProductClass {
 		BarCodeOfProductRelated1 = new String();
 		BarCodeOfProductRelated2 = new String();
 		BarCodeOfProductRelated3 = new String();
+		productImageResourceId = -1;
+		detailImageResourceId = -1;
 	}
 	
 	public ProductClass (String BarCode)
@@ -38,6 +42,8 @@ public class ProductClass {
 		this.BarCodeOfProductRelated1 = library.GetRelatedProduct1BarCodeByBarCode(BarCode);
 		this.BarCodeOfProductRelated2=library.GetRelatedProduct2BarCodeByBarCode(BarCode);
 		this.BarCodeOfProductRelated3=library.GetRelatedProduct3BarCodeByBarCode(BarCode);
+		this.productImageResourceId = library.GetProductImageResourceIdByBarCode(BarCode);
+		this.detailImageResourceId = library.GetDetailImageResourceIdByBarCode(BarCode);
 	}
 	
 	

@@ -2,6 +2,7 @@ package com.inghackathon.dailyapp.data;
 
 
 import java.util.ArrayList;
+import com.inghackathon.dailyapp.R;
 
 public class ProductLibrary {
 
@@ -20,6 +21,8 @@ public class ProductLibrary {
 		ProductExample.BarCodeOfProductRelated1="5000159458139";
 		ProductExample.BarCodeOfProductRelated2="8713300801582";
 		ProductExample.BarCodeOfProductRelated3="8493281345324";
+		ProductExample.productImageResourceId = R.drawable.ic_colacan;
+		ProductExample.detailImageResourceId = R.drawable.ic_criteria_cola;
 		
 		
 		CriteriaExample = new CriteriaClass();
@@ -90,6 +93,8 @@ public class ProductLibrary {
 				ProductExample.BarCodeOfProductRelated1="4890008100309";
 				ProductExample.BarCodeOfProductRelated2="8713300801582";
 				ProductExample.BarCodeOfProductRelated3="8493281345324";
+				ProductExample.productImageResourceId = R.drawable.ic_marsbar;
+				ProductExample.detailImageResourceId = R.drawable.ic_criteria_marsbar;
 				
 				CriteriaExample = new CriteriaClass();
 				CriteriaExample.name = CriteriaEnum.Allergic;
@@ -160,6 +165,8 @@ public class ProductLibrary {
 				ProductExample.BarCodeOfProductRelated1="5000159458139";
 				ProductExample.BarCodeOfProductRelated2="4890008100309";
 				ProductExample.BarCodeOfProductRelated3="8493281345324";
+				ProductExample.productImageResourceId = R.drawable.ic_milk;
+				ProductExample.detailImageResourceId = R.drawable.ic_criteria_milk;
 				
 				CriteriaExample = new CriteriaClass();
 				CriteriaExample.name = CriteriaEnum.Allergic;
@@ -228,6 +235,8 @@ public class ProductLibrary {
 				ProductExample.BarCodeOfProductRelated1="5000159458139";
 				ProductExample.BarCodeOfProductRelated2="8713300801582";
 				ProductExample.BarCodeOfProductRelated3="4890008100309";
+				ProductExample.productImageResourceId = R.drawable.ic_orange;
+				ProductExample.detailImageResourceId = R.drawable.ic_criteria_orange;
 				
 				CriteriaExample = new CriteriaClass();
 				CriteriaExample.name = CriteriaEnum.Allergic;
@@ -378,6 +387,36 @@ public class ProductLibrary {
 		}
 		
 		String ex = ProductExamples.get(0).BarCodeOfProductRelated3;
+		
+		return ex;
+	}
+	
+	public int GetProductImageResourceIdByBarCode(String BarCode)
+	{
+		for (ProductClass i : ProductExamples)
+		{
+			if (i.BarCode.equals(BarCode))
+			{
+				return i.productImageResourceId;
+			}
+		}
+		
+		int ex = ProductExamples.get(0).productImageResourceId;
+		
+		return ex;
+	}
+	
+	public int GetDetailImageResourceIdByBarCode(String BarCode)
+	{
+		for (ProductClass i : ProductExamples)
+		{
+			if (i.BarCode.equals(BarCode))
+			{
+				return i.detailImageResourceId;
+			}
+		}
+		
+		int ex = ProductExamples.get(0).detailImageResourceId;
 		
 		return ex;
 	}

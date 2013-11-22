@@ -91,7 +91,7 @@
 <!-- Criteria list -->
     <ImageView 
         android:id="@+id/imageCriteria"
-        android:src="@drawable/ic_criteria"
+        android:src="@drawable/ic_criteria_cola"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageChoice2"
