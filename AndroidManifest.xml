@@ -44,6 +44,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.inghackathon.dailyapp.HomeActivity" />
         </activity>
+        <activity
+            android:name="com.inghackathon.dailyapp.ui.CartTabActivity"
+            android:label="@string/title_activity_cart_tab"
+            android:parentActivityName="com.inghackathon.dailyapp.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.inghackathon.dailyapp.HomeActivity" />
+        </activity>
+        <activity
+            android:name="com.inghackathon.dailyapp.ui.HistoryTabActivity"
+            android:label="@string/title_activity_history_tab"
+            android:parentActivityName="com.inghackathon.dailyapp.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.inghackathon.dailyapp.HomeActivity" />
+        </activity>
     </application>
 
 </manifest>
